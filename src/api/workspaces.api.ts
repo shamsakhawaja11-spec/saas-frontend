@@ -5,7 +5,7 @@ export const createWorkspace=async(dto:CreateWorkspaceDto):Promise<Workspace>=>{
     const response=await api.post<Workspace>('/workspaces',dto);
     return response.data;
 }
-export const getWorkspaces=async():Promise<Workspace[]>=>{
+export const getWorkspaces=async(id:string):Promise<Workspace[]>=>{
     const response=await api.get<Workspace[]>('/workspaces');
     return response.data;
 }
