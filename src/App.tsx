@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import LoginPage from './pages/auth/loginpage';
-import RegisterPage from './pages/auth/registerPage';
-import ProtectedRoute from './components/layout/protectedRoute';
-import DashboardLayout from './components/layout/Dashboardlayout';
+import LoginPage from './pages/auth/LoginPage';
+import RegisterPage from './pages/auth/RegisterPage';
+import ProtectedRoute from './components/layout/ProtectedRoute';
+import DashboardLayout from './components/layout/DashboardLayout';
+import DashboardPage from './pages/DashboardPage';
 
 const App = () => {
   return (
@@ -20,9 +21,7 @@ const App = () => {
         <Route path="/dashboard" element={
           <ProtectedRoute>
             <DashboardLayout>
-              <div className="text-white text-2xl font-bold">
-                Welcome to Dashboard 👋
-              </div>
+              <DashboardPage />
             </DashboardLayout>
           </ProtectedRoute>
         } />
