@@ -11,10 +11,30 @@ interface AuthState {
   setLoading: (loading: boolean) => void;
 }
 
+const getUser = () => {
+  try {
+    const user = localStorage.getItem('user');
+    if (!user || user === 'undefined') return null;
+    return JSON.parse(user);
+  } catch {
+    return null;
+  }
+};
+
+const getToken = () => {
+  try {
+    const token = localStorage.getItem('token');
+    if (!token || token === 'undefined') return null;
+    return token;
+  } catch {
+    return null;
+  }
+};
+
 const useAuthStore = create<AuthState>((set) => ({
-  user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : null,
-  token: localStorage.getItem('token'),
-  isAuthenticated: !!localStorage.getItem('token'),
+  user: getUser(),
+  token: getToken(),
+  isAuthenticated: !!getToken(),
   isLoading: false,
 
   setUser: (user, token) => {
