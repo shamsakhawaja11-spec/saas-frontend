@@ -4,6 +4,7 @@ import RegisterPage from './pages/auth/RegisterPage';
 import ProtectedRoute from './components/layout/ProtectedRoute';
 import DashboardLayout from './components/layout/DashboardLayout';
 import DashboardPage from './pages/DashboardPage';
+import WorkspacesPage from './pages/WorkspacesPage';
 
 const App = () => {
   return (
@@ -26,15 +27,14 @@ const App = () => {
           </ProtectedRoute>
         } />
 
-        <Route path="/workspaces" element={
-          <ProtectedRoute>
-            <DashboardLayout>
-              <div className="text-white text-2xl font-bold">
-                Workspaces — Coming Soon
-              </div>
-            </DashboardLayout>
-          </ProtectedRoute>
-        } />
+
+      <Route path="/workspaces" element={
+        <ProtectedRoute>
+          <DashboardLayout>
+            <WorkspacesPage />
+          </DashboardLayout>
+        </ProtectedRoute>
+      } />
 
         <Route path="/projects" element={
           <ProtectedRoute>
