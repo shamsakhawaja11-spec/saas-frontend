@@ -16,7 +16,7 @@ export interface Task{
     createdAt:string;
     updatedAt:string;
 }
-export interface Task{
+export interface CreateTaskDto{
     title:string;
     description?:string;
     status:TaskStatus;
@@ -26,4 +26,13 @@ export interface Task{
     estimatedHours?:string;
     boardId:string;
     assigneeId:string;
+}
+export interface UpdateTaskDto{
+    title?: string;
+    description?: string;
+    status?: TaskStatus;
+    priority?: TaskPriority;
+    position?: number;
+    estimatedHours?: number;
+    assigneeId?: string;
 }
