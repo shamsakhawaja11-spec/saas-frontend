@@ -22,15 +22,18 @@ const WorkspacesPage = () => {
   // ── Create workspace ──
   const createMutation = useMutation({
     mutationFn: createWorkspace,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['workspaces'] });
-      setShowModal(false);
-      setName('');
-      setDescription('');
-      setError('');
-    },
-    onError: (err: any) => {
-      setError(err?.response?.data?.message || 'Failed to create workspace');
+   onSuccess: () => {
+    queryClient.invalidateQueries({ 
+        queryKey: ['workspaces'],
+        refetchType: 'all'
+    });
+    setShowModal(false);
+    setName('');
+    setDescription('');
+    setError('');
+  },
+    onError: (err: Error & { response?: { data?: { message?: string } } }) => {
+     setError(err?.response?.data?.message || 'Failed to create workspace');
     },
   });
 
