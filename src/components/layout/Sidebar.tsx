@@ -1,12 +1,10 @@
-import {Building2, CheckSquare, FolderKanban, LayoutDashboard, SquareKanban,LogOut} from 'lucide-react';
+import {Building2, CheckSquare, LayoutDashboard,LogOut} from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
 import useAuthStore from '../../store/auth.store';
 
 const navItems=[
     { label:'Dashboard',icon:LayoutDashboard,path:'/dashboard'},
     { label:'Workspaces',icon:Building2,path:'/workspaces'},
-    { label:'Projects',icon:FolderKanban,path:'/workspaces'},
-    { label:'Boards',icon:SquareKanban,path:'/boards'},
     { label:'Tasks',icon:CheckSquare,path:'/tasks'},
 ];
 const Sidebar=()=>{
