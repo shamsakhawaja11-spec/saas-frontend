@@ -191,7 +191,7 @@ const DashboardPage = () => {
               {workspaces.map((workspace) => (
                 <div
                   key={workspace.id}
-                  onClick={() => navigate(`/workspaces/${workspace.id}`)}
+                  onClick={() => navigate(`/workspaces/${workspace.id}/projects`)}
                   className="bg-dark-800 border border-slate-700 rounded-xl p-5 hover:border-primary-600 hover:bg-dark-700 transition cursor-pointer group"
                 >
                   {/* Avatar + Name */}
