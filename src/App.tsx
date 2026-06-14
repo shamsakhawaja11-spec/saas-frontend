@@ -39,12 +39,12 @@ const App = () => {
 
 
       <Route path="/workspaces/:workspaceId/projects" element={
-        <ProtectedRoute>
-          <DashboardLayout>
-            <ProjectsPage />
-          </DashboardLayout>
-        </ProtectedRoute>
-      } />
+  <ProtectedRoute>
+    <DashboardLayout>
+      <ProjectsPage />
+    </DashboardLayout>
+  </ProtectedRoute>
+} />
 
         <Route path="/boards" element={
           <ProtectedRoute>

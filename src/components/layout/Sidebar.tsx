@@ -5,7 +5,7 @@ import useAuthStore from '../../store/auth.store';
 const navItems=[
     { label:'Dashboard',icon:LayoutDashboard,path:'/dashboard'},
     { label:'Workspaces',icon:Building2,path:'/workspaces'},
-    { label:'Projects',icon:FolderKanban,path:'/projects'},
+    { label:'Projects',icon:FolderKanban,path:'/workspaces'},
     { label:'Boards',icon:SquareKanban,path:'/boards'},
     { label:'Tasks',icon:CheckSquare,path:'/tasks'},
 ];
