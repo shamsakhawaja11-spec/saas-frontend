@@ -19,13 +19,13 @@ export interface Task{
 export interface CreateTaskDto{
     title:string;
     description?:string;
-    status:TaskStatus;
-    priority:TaskPriority;
+    status?:TaskStatus;
+    priority?:TaskPriority;
     position?:string;
     duedate?:string;
     estimatedHours?:string;
     boardId:string;
-    assigneeId:string;
+    assigneeId?:string;
 }
 export interface UpdateTaskDto{
     title?: string;
