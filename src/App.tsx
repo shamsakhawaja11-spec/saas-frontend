@@ -7,7 +7,7 @@ import DashboardPage from './pages/DashboardPage';
 import WorkspacesPage from './pages/WorkspacesPage';
 import ProjectsPage from './pages/ProjectsPage';
 import BoardsPage from './pages/BoardsPage';
-
+import KanbanPage from './pages/KanbanPage';
 const App = () => {
   return (
     <BrowserRouter>
@@ -50,6 +50,13 @@ const App = () => {
   <ProtectedRoute>
     <DashboardLayout>
       <ProjectsPage />
+    </DashboardLayout>
+  </ProtectedRoute>
+} />
+<Route path="/boards/:boardId/kanban" element={
+  <ProtectedRoute>
+    <DashboardLayout>
+      <KanbanPage />
     </DashboardLayout>
   </ProtectedRoute>
 } />
