@@ -5,6 +5,7 @@ import ProtectedRoute from './components/layout/ProtectedRoute';
 import DashboardLayout from './components/layout/DashboardLayout';
 import DashboardPage from './pages/DashboardPage';
 import WorkspacesPage from './pages/WorkspacesPage';
+import ProjectsPage from './pages/ProjectsPage';
 
 const App = () => {
   return (
@@ -36,15 +37,14 @@ const App = () => {
         </ProtectedRoute>
       } />
 
-        <Route path="/projects" element={
-          <ProtectedRoute>
-            <DashboardLayout>
-              <div className="text-white text-2xl font-bold">
-                Projects — Coming Soon
-              </div>
-            </DashboardLayout>
-          </ProtectedRoute>
-        } />
+
+      <Route path="/workspaces/:workspaceId/projects" element={
+        <ProtectedRoute>
+          <DashboardLayout>
+            <ProjectsPage />
+          </DashboardLayout>
+        </ProtectedRoute>
+      } />
 
         <Route path="/boards" element={
           <ProtectedRoute>
