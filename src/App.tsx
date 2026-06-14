@@ -6,6 +6,7 @@ import DashboardLayout from './components/layout/DashboardLayout';
 import DashboardPage from './pages/DashboardPage';
 import WorkspacesPage from './pages/WorkspacesPage';
 import ProjectsPage from './pages/ProjectsPage';
+import BoardsPage from './pages/BoardsPage';
 
 const App = () => {
   return (
@@ -38,6 +39,13 @@ const App = () => {
       } />
 
 
+<Route path="/projects/:projectId/boards" element={
+  <ProtectedRoute>
+    <DashboardLayout>
+      <BoardsPage />
+    </DashboardLayout>
+  </ProtectedRoute>
+} />
       <Route path="/workspaces/:workspaceId/projects" element={
   <ProtectedRoute>
     <DashboardLayout>
