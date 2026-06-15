@@ -15,6 +15,10 @@ export const getTaskById = async (id: string): Promise<Task> => {
   const response = await api.get<{ data: Task }>(`/tasks/${id}`);
   return response.data.data;
 };
+export const getMyTasks = async (): Promise<Task[]> => {
+  const response = await api.get<{ data: Task[] }>('/tasks/my/tasks');
+  return response.data.data;
+};
 
 export const updateTask = async (id: string, dto: UpdateTaskDto): Promise<Task> => {
   const response = await api.patch<{ data: Task }>(`/tasks/${id}`, dto);
