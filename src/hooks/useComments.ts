@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { commentsApi } from '../api/comments.api';
-import { CreateCommentDto, UpdateCommentDto } from '../types/comment.types';
+import type{ CreateCommentDto, UpdateCommentDto } from '../types/comment.types';
 
 // Fetch all comments for a task
 export const useComments = (taskId: string) => {
