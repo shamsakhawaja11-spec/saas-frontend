@@ -1,5 +1,6 @@
-import { Bell, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 import useAuthStore from '../../store/auth.store';
+import { NotificationsDropdown } from '../common/NotificationsDropdown';
 
 const Navbar = () => {
   const { user } = useAuthStore();
@@ -21,10 +22,8 @@ const Navbar = () => {
       <div className="flex items-center gap-4">
 
         {/* Notification bell */}
-        <button className="relative p-2 rounded-lg text-slate-400 hover:text-white hover:bg-dark-700 transition">
-          <Bell size={18} />
-          <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-primary-500 rounded-full"></span>
-        </button>
+        <NotificationsDropdown />
+
 
         {/* User avatar */}
         <div className="flex items-center gap-3">
