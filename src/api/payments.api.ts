@@ -1,5 +1,5 @@
 import api from './axios';
-import { CheckoutResponse, CreateCheckoutDto, Subscription } from '../types/payment.types';
+import type{ CheckoutResponse, CreateCheckoutDto, Subscription } from '../types/payment.types';
 
 export const paymentsApi = {
 
