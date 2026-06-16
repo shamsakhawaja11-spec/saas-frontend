@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { timeTrackingApi } from '../api/timeTracking.api';
-import { CreateTimeEntryDto, UpdateTimeEntryDto } from '../types/timeEntry.types';
+import type{ CreateTimeEntryDto, UpdateTimeEntryDto } from '../types/timeEntry.types';
 
 // Get all time entries for a task
 export const useTaskTimeEntries = (taskId: string) => {
