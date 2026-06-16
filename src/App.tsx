@@ -9,6 +9,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import BoardsPage from './pages/BoardsPage';
 import KanbanPage from './pages/KanbanPage';
 import TasksPage from './pages/TasksPage';
+import ReportsPage from './pages/ReportsPage';
 
 const App = () => {
   return (
@@ -90,6 +91,15 @@ const App = () => {
             </DashboardLayout>
           </ProtectedRoute>
         } />
+        import ReportsPage from './pages/ReportsPage';
+
+<Route path="/reports" element={
+  <ProtectedRoute>
+    <DashboardLayout>
+      <ReportsPage />
+    </DashboardLayout>
+  </ProtectedRoute>
+} />
 
       </Routes>
     </BrowserRouter>
