@@ -1,5 +1,5 @@
 import api from './axios';
-import { TaskSummary, TimeSummary, OverdueTask, UserProductivity } from '../types/report.types';
+import type {TaskSummary,TimeSummary, OverdueTask, UserProductivity } from '../types/report.types';
 
 export const reportsApi = {
 
