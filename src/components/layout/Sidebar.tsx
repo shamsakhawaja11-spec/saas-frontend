@@ -1,11 +1,12 @@
-import {Building2, CheckSquare, LayoutDashboard,LogOut} from 'lucide-react';
+import { Building2, CheckSquare, LayoutDashboard, LogOut, BarChart3, CreditCard } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
 import useAuthStore from '../../store/auth.store';
-
-const navItems=[
-    { label:'Dashboard',icon:LayoutDashboard,path:'/dashboard'},
-    { label:'Workspaces',icon:Building2,path:'/workspaces'},
-    { label:'Tasks',icon:CheckSquare,path:'/tasks'},
+const navItems = [
+  { label: 'Dashboard', icon: LayoutDashboard, path: '/dashboard' },
+  { label: 'Workspaces', icon: Building2, path: '/workspaces' },
+  { label: 'Tasks', icon: CheckSquare, path: '/tasks' },
+  { label: 'Reports', icon: BarChart3, path: '/reports' },
+  { label: 'Billing', icon: CreditCard, path: '/payments' },
 ];
 const Sidebar=()=>{
     const location=useLocation();
