@@ -14,9 +14,16 @@ api.interceptors.request.use((config) => {
   }
   return config;
 });
-
+// ADD
 api.interceptors.response.use(
-  (response) => response,
+  (response) => {
+    // Backend wraps all responses in { statusCode, message, data, timestamp, path }
+    // Unwrap it here so every API call gets the actual data directly
+    if (response.data && typeof response.data === 'object' && 'data' in response.data) {
+      response.data = response.data.data;
+    }
+    return response;
+  },
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem('token');
