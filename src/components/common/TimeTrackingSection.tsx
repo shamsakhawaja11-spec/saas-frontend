@@ -84,7 +84,7 @@ export const TimeTrackingSection = ({ taskId, currentUserId }: TimeTrackingSecti
   };
 
   // Total minutes for this task
-  const totalMinutes = entries?.reduce((sum, e) => sum + e.minutes, 0) ?? 0;
+  const totalMinutes = Array.isArray(entries) ? entries.reduce((sum, e) => sum + e.minutes, 0) : 0;
 
   return (
     <div className="flex flex-col gap-6 p-4">
@@ -125,7 +125,7 @@ export const TimeTrackingSection = ({ taskId, currentUserId }: TimeTrackingSecti
               <label className="text-xs text-zinc-400">Minutes</label>
               <input
                 type="number"
-                {...register('minutes')}
+                {...register('minutes', { valueAsNumber: true })}
                 placeholder="e.g. 90"
                 className="bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-violet-500 transition"
               />
